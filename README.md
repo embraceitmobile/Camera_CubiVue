@@ -1,13 +1,16 @@
-[![Download](/images/1.png)]
+![Download](/images/1.png)
 
 # CubiVue Camera
-Built on JetPack compose & Material3.
+Built on JetPack compose & Compose Material 3. This camera app uses CameraX library.
+
+# Features
+- Full screen mode
+- Full sensor orientation support
+- Image capture & preview
 
 ![Images](/images/2.png)
 
 # License
-
-#### FlexibleAdapter & Extensions
 
     Copyright 2022 CubiVue
 

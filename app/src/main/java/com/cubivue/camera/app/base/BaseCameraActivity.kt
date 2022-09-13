@@ -28,8 +28,10 @@ open class BaseCameraActivity: ComponentActivity()  {
     var shouldShowPhoto: MutableState<Boolean> = mutableStateOf(false)
 
     fun handleImageCapture(uri: Uri) {
-        Log.i("kilo", "Image captured: $uri")
+        Log.i(TAG, "Image captured: $uri")
         shouldShowCamera.value = false
+        photoUri = uri
+        shouldShowPhoto.value = true
     }
 
     fun getOutputDirectory(): File {

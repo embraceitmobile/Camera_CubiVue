@@ -1,6 +1,7 @@
 package com.cubivue.camera.app
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -63,7 +64,12 @@ class MainCameraActivity : BaseCameraActivity() {
                         CameraView(
                             outputDirectory = outputDirectoryFile,
                             executor = cameraExecutor,
-                            onImageCaptured = ::handleImageCapture,
+                            onImageCaptured =   {
+                                val intent = intent
+                                intent.putExtra("URI", it.toString())
+                                setResult(RESULT_OK, intent)
+                                finish()
+                            },
                             onError = { Log.e("CameraView", "View error:", it) }
                         )
                     }

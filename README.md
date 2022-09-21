@@ -16,8 +16,8 @@ Built on JetPack compose & Compose Material 3. This camera app uses CameraX libr
   - First Add This Project as a Library
   - change this line in build.gradle of this project  id 'com.android.application' to   id 'com.android.library'
   - change the application detail of this project like
-
-    <application>
+    
+  - <application>
       <activity
          android:name=".MainCameraActivity"/>
          <activity
@@ -32,7 +32,7 @@ Built on JetPack compose & Compose Material 3. This camera app uses CameraX libr
            ) { result ->
                if (result.resultCode === Activity.RESULT_OK) {
                    var bundle = result.data?.extras
-                   Log.e("TAG", "URI ${bundle?.getString("MESSAGE")}")
+                   Log.e("TAG", "URI ${bundle?.getString("URI")}")
                    }
                }
 

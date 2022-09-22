@@ -11,21 +11,23 @@ Built on JetPack compose & Compose Material 3. This camera app uses CameraX libr
 ![Images](/images/2.png)
 
 
-# How To USE
+# How To Use
 
-  - First Add This Project as a Library
-  - change this line in build.gradle of this project  id 'com.android.application' to   id 'com.android.library'
-  - change the application detail of this project like
-    
-  - <application>
+## In Manifest file:
+
+```xml
+  <application>
       <activity
          android:name=".MainCameraActivity"/>
          <activity
              android:name=".base.BaseCameraActivity"/>
-     </application>
+  </application>
+```
     
-    - In Activity class for access Camera use below Code
 
+## From your Fragment or Activity class:
+
+```kotlin
     var mStartForResult: ActivityResultLauncher<Intent> =
     registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -37,6 +39,7 @@ Built on JetPack compose & Compose Material 3. This camera app uses CameraX libr
                }
 
      mStartForResult.launch(Intent(this, MainCameraActivity::class.java))
+```
 
 # License
 
